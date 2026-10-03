@@ -1,0 +1,50 @@
+[
+  {
+    "id": "trigger_positive_01",
+    "input": "Review PR #42 and tell me if it is ready for human review.",
+    "expected_trigger": true,
+    "expected_output": "A structured readiness report covering requirements/specification, changed files, implementation, tests, traceability, available test evidence, and findings classified as MUST FIX, SHOULD FIX, or OPTIONAL."
+  },
+  {
+    "id": "trigger_positive_02",
+    "input": "Check whether this pull request is ready to be handed off to a human reviewer. Inspect the requirements, spec, diff, and tests.",
+    "expected_trigger": true,
+    "expected_output": "A read-only pre-review assessment with the relevant documentation, diff, tests, evidence, findings, limitations, and human-review decision points."
+  },
+  {
+    "id": "trigger_positive_03",
+    "input": "Before I ask someone to review PR #17, verify that the implementation matches the requirements and that the tests provide enough evidence.",
+    "expected_trigger": true,
+    "expected_output": "A structured report comparing requirements to implementation and tests, identifying traceability gaps, test/evidence gaps, and issues by severity."
+  },
+  {
+    "id": "trigger_positive_04",
+    "input": "Do a pre-review check on this PR. Look at REQUIREMENTS.md, SPEC.md, TASKS.md, the diff, and relevant tests, then report anything that needs fixing before human review.",
+    "expected_trigger": true,
+    "expected_output": "A read-only workflow that inspects project documentation, the PR diff, implementation, relevant tests, and available CI evidence, followed by categorized findings."
+  },
+  {
+    "id": "trigger_negative_01",
+    "input": "Review PR #42 and leave comments on the pull request for the developer.",
+    "expected_trigger": false,
+    "expected_output": "This is an active GitHub commenting/review action rather than a pre-human-review readiness assessment."
+  },
+  {
+    "id": "trigger_negative_02",
+    "input": "Merge PR #42 into main if all the tests pass.",
+    "expected_trigger": false,
+    "expected_output": "This is a merge/action request, not a request to assess readiness for human review."
+  },
+  {
+    "id": "trigger_negative_03",
+    "input": "Fix the failing tests in PR #42 and push the changes to the branch.",
+    "expected_trigger": false,
+    "expected_output": "This requests implementation changes and repository writes rather than a read-only readiness assessment."
+  },
+  {
+    "id": "trigger_negative_04",
+    "input": "Write a GitHub Actions workflow that runs pytest for every pull request.",
+    "expected_trigger": false,
+    "expected_output": "This is a CI implementation task, not a pre-human-review assessment."
+  }
+]
