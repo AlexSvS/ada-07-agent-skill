@@ -17,7 +17,8 @@
     "input": "Review the current branch 'update-branch' from repository AlexSvS/ada-05-spec-driven-feature before I open a PR.",
     "expected_behavior": [
         "reviews local diff",
-        "produces draft report",
+        "produces report",
+        "validates report",
         "does not modify source"
     ]
  },
