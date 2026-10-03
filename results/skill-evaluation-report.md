@@ -90,7 +90,7 @@ Tools / MCP used: Antigravity + GitHub MCP
 Artifacts: PR readiness review report
 PASS / FAIL: PASS
 
-### Case: 
+### Case: boundary-01
 Expected: A read-only boundary notice when the requested action exceeds the Skill's defined review-only scope.
 Actual: The Skill maintained the read-only boundary and did not perform repository modifications or GitHub actions.
 Tools / MCP used: Antigravity + GitHub MCP
